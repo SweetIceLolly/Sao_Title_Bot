@@ -132,7 +132,8 @@ def save_industry_dict():
 #           start_pn: Start page
 #           end_pn: End page
 def update_dictionaries(use_google, keyword, start_pn, end_pn):
-    initial_items = len(NounList_dict)
+    initial_noun_items = len(NounList_dict)
+    initial_industry_items = len(Industry_dict)
 
     print("正在初始化基于Chrome的浏览器自动化程序...\n")
     chrome_options = Options()
@@ -238,7 +239,8 @@ def update_dictionaries(use_google, keyword, start_pn, end_pn):
                 print(sys.exc_info()[1])
     
     driver.close()
-    print("当前总计名词词典条目数: " + str(len(NounList_dict)) + " 新增条目数: " + str(len(NounList_dict) - initial_items))
+    print("当前总计名词词典条目数: " + str(len(NounList_dict)) + " 新增条目数: " + str(len(NounList_dict) - initial_noun_items))
+    print("当前总计工业类型词典条目数: " + str(len(Industry_dict)) + " 新增条目数: " + str(len(Industry_dict) - initial_industry_items))
     save_noun_dict()
     save_industry_dict()
 
