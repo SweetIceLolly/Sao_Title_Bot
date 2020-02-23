@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 # For browser manipulations
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
@@ -426,17 +428,17 @@ if __name__ == '__main__':
             elif userinput[0] == 'remove':                  # Manually remove
                 try:
                     if userinput[1] == 'industry':              # For industry dictionary
-                        if userinput[2] in Industry_dict:
+                        if not userinput[2] in Industry_dict:
                             print("您要移除的条目不存在！")
                         else:
                             del Industry_dict[' '.join(userinput[2:])]
                             print("成功移除！")
                             save_industry_dict()
                     elif userinput[1] == 'noun':                # For noun dictionary
-                        if userinput[2] in NounList_dict:
-                            print("您要输入的条目已存在！")
+                        if not userinput[2] in NounList_dict:
+                            print("您要移除的条目不存在！")
                         else:
-                            del Industry_dict[' '.join(userinput[2:])]
+                            del NounList_dict[' '.join(userinput[2:])]
                             print("成功移除！")
                             save_noun_dict()
                     else:
