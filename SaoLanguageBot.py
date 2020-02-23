@@ -205,14 +205,14 @@ if __name__ == '__main__':
                     show_error()
             elif userinput[0] == 'remove':                  # 手动删除词典
                 try:
-                    if userinput[1] == 'industry':              # For industry dictionary
+                    if userinput[1] == 'industry':              # 工业类型词典
                         if not userinput[2] in Industry_dict:
                             print("您要移除的条目不存在！")
                         else:
                             del Industry_dict[' '.join(userinput[2:])]
                             print("成功移除！")
                             save_industry_dict()
-                    elif userinput[1] == 'noun':                # For noun dictionary
+                    elif userinput[1] == 'noun':                # 名词词典
                         if not userinput[2] in NounList_dict:
                             print("您要移除的条目不存在！")
                         else:
